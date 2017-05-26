@@ -41,10 +41,10 @@ fi
 SAVE_INTO=$RANDOM
 
 # Call pipeline sequence
-docker run -rm probeurre:cloner -w "$SAVE_INTO" -r "$REPO"
+docker run --rm -v /tmp/probeurre-data:/probeurre-data probeurre:cloner python3 probeurre.py -w "$SAVE_INTO" -r "$REPO"
 
-docker run -rm probeurre:extracter -w "$SAVE_INTO" -d "$DATE"
+docker run --rm -v /tmp/probeurre-data:/probeurre-data probeurre:extracter ./extracter.sh -w "$SAVE_INTO" -d "$DATE"
 
-docker run -rm probeurre:analyzer -w "$SAVE_INTO" 
+docker run --rm -v /tmp/probeurre-data:/probeurre-data probeurre:analyzer ./analyzer.sh -w "$SAVE_INTO" 
 
-docker run -rm probeurre:visualizer -w "$SAVE_INTO" 
+docker run --rm -v /tmp/probeurre-data:/probeurre-data -p 5555:5555 probeurre:visualizer python3 probeurre.py -w "$SAVE_INTO" 

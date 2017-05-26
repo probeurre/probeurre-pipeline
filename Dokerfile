@@ -7,4 +7,6 @@ RUN apt-get update && \
 	
 COPY pipeline.sh /probeurre/pipeline.sh
 
+WORKDIR /probeurre
+
 ENTRYPOINT ["/probeurre/pipeline.sh"]
