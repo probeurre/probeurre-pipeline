@@ -9,4 +9,6 @@ COPY pipeline.sh /probeurre/pipeline.sh
 
 WORKDIR /probeurre
 
+EXPOSE 5555
+
 ENTRYPOINT ["/probeurre/pipeline.sh"]
