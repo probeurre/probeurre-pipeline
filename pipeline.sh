@@ -47,7 +47,7 @@ docker run --rm -v /tmp/probeurre-data:/probeurre-data probeurre:extracter ./ext
 
 docker run --rm -v /tmp/probeurre-data:/probeurre-data probeurre:analyzer ./analyzer.sh -w "$SAVE_INTO" 
 
-docker run --rm -v /tmp/probeurre-data:/probeurre-data -P 5555:5555 probeurre:visualizer python3 probeurre.py -w "$SAVE_INTO" 
+docker run --rm -v /tmp/probeurre-data:/probeurre-data -p 127.0.0.1:5555:5555 probeurre:visualizer python3 probeurre.py -w "$SAVE_INTO" 
 
 rm -rf /tmp/probeurre-data/$SAVE_INTO
 
