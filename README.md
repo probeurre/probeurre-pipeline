@@ -19,5 +19,15 @@ sudo docker build -t probeurre:extracter .
 cd ../probeurre-visualizer
 sudo docker build -t probeurre:visualizer .
 cd ..
-echo "Done."
+echo "Done. Running the pipeline"
+```
+
+To run the pipeline on the repository with URL `<repo>` at the date `date`, run :
+```
+sudo docker run -it -v /run/docker.sock:/run/docker.sock --rm probeurre:pipeline pipeline.sh -r <repo> [-d date]
+```
+
+For example, for facebook/React :
+```
+sudo docker run -it -v /run/docker.sock:/run/docker.sock --rm probeurre:pipeline pipeline.sh -r https://github.com/facebook/react.git
 ```
