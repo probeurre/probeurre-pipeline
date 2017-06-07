@@ -1,6 +1,15 @@
-The pipeline manages all the other components.
+# probeurre-pipeline
 
-To clone them all and build the Docker images, run :
+**probeurre-pipeline** is the main component of the probeurre application. It manages and runs all the four other components. :
+
+- probeurre-cloner
+- probeurre-extracter
+- probeurre-analyzer
+- probeurre-visualizer
+
+## Run
+
+To clone all of the repos and build the Docker images, run :
 
 ```
 git clone https://gitlab.forge.hefr.ch/probeurre/probeurre-pipeline.git
@@ -21,3 +30,11 @@ sudo docker build -t probeurre:visualizer .
 cd ..
 echo "Done."
 ```
+
+## Report
+
+The paper is available in [doc/report.pdf](doc/report.pdf).
+
+## Slides
+
+The slides of the presentation are available in [doc/slides.pdf](doc/slides.pdf).
