@@ -31,6 +31,18 @@ cd ..
 echo "Done."
 ```
 
+To run the pipeline on the repository with URL `<repo>` at the date `date`, run :
+```
+sudo docker run -it -v /run/docker.sock:/run/docker.sock --rm probeurre:pipeline pipeline.sh -r <repo> [-d date]
+```
+
+For example, for facebook/React :
+```
+sudo docker run -it -v /run/docker.sock:/run/docker.sock --rm probeurre:pipeline pipeline.sh -r https://github.com/facebook/react.git
+```
+
+Once finished, you'll be able to access the results on (http://localhost:5555)[http://localhost:5555].
+
 ## Report
 
 The paper is available in [doc/report.pdf](doc/report.pdf).
